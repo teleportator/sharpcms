@@ -3,7 +3,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SharpCMS.Repository.EF;
 
-namespace DataAccess.Test
+namespace SharpCMS.DataAccess.Tests
 {
 	[TestClass]
 	public class ContextTest
