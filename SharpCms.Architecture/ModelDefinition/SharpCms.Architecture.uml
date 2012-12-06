@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="83c66fbc-6b47-44ba-b71e-a40230cc12d3"
+  name="SharpCms.Architecture" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <appliedStereotypesInternal>
+    <stereotypeInstance
+      Id="c8727766-5d44-4e65-9426-f4b2d320e34b"
+      name="namespace"
+      profile="CSharpProfile">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="e37df4af-65cb-47e7-83af-2bd7e4e4baeb">
+          <propertyInstance
+            Id="509252d4-5edd-4dba-a6f9-56a7686085ed"
+            name="BaseName"
+            value="SharpCms" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="3440b58b-5813-4595-b9f8-26b6d9e89a87">
+          <propertyInstance
+            Id="91067571-72b3-4add-9382-7c1418c4a87c"
+            name="ClrAttributes" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="16705f57-75d7-4652-9456-1cfb63ac037a">
+          <propertyInstance
+            Id="90e12c4f-3ff1-4f6a-9bce-02f57b27b7a2"
+            name="Usings" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="dbe7b4cc-a495-4e10-9236-88dcf0230561">
+      <profileInstance
+        Id="19064b44-05d0-4ef9-8084-ff62815e9970"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1b9beb97-7768-4c07-be59-eee5d5df7b5c"
+        LastKnownName="SharpCMS"
+        LastKnownLocation="Package_1316.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="851827fb-e5e7-447b-87ae-77e88c854de2"
+        LastKnownName="System"
+        LastKnownLocation="Package2_1316.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="04291320-3f4a-4935-aac0-b46f1114d2d7"
+        name="Image"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="6b530fa2-a853-422d-abd9-3249ef1f6949"
+            isSubstitutable="false">
+            <classMoniker
+              Id="81e66daa-ddc6-4a8d-8db9-1d62d28b5db4"
+              LastKnownName="ContentBase"
+              LastKnownLocation="Package1_1316.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="a9020007-3061-4e8a-9cf8-559f4d60b979"
+            name="Path"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="SharpCms.Architecture.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

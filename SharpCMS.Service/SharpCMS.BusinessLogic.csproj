@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4ACC4F5E-57F8-435B-A191-36310D5C2EB4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpCMS.BusinessLogic</RootNamespace>
+    <AssemblyName>SharpCMS.BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Announcements\AddAnnouncementOperation.cs" />
+    <Compile Include="Announcements\DeleteAnnouncementOperation.cs" />
+    <Compile Include="Announcements\FindAnnouncementCollectionOperation.cs" />
+    <Compile Include="Announcements\FindAnnouncementOperation.cs" />
+    <Compile Include="Announcements\GetCommingAnnouncementsAmountOperation.cs" />
+    <Compile Include="Announcements\UpdateAnnouncementOperation.cs" />
+    <Compile Include="Articles\AddArticleOperation.cs" />
+    <Compile Include="Articles\DeleteArticleOperation.cs" />
+    <Compile Include="Articles\FindArticleCollectionOperation.cs" />
+    <Compile Include="Articles\FindArticleOpertion.cs" />
+    <Compile Include="Articles\GetRootArticleOperation.cs" />
+    <Compile Include="Articles\UpdateArticleOperation.cs" />
+    <Compile Include="BusinessClass.cs" />
+    <Compile Include="Cache\HttpSiteMapCache.cs" />
+    <Compile Include="Cache\ISiteMapCache.cs" />
+    <Compile Include="Comments\AddCommentOperation.cs" />
+    <Compile Include="Comments\DeleteCommentOperation.cs" />
+    <Compile Include="Comments\FindCommentsOperation.cs" />
+    <Compile Include="Companies\AddCompanyOperation.cs" />
+    <Compile Include="Companies\DeleteCompanyOperation.cs" />
+    <Compile Include="Companies\FindCompanyCollectionOperation.cs" />
+    <Compile Include="Companies\FindCompanyOperation.cs" />
+    <Compile Include="Companies\UpdateCompanyOperation.cs" />
+    <Compile Include="Ideas\AddIdeaOperation.cs" />
+    <Compile Include="Ideas\DeleteIdeaOperation.cs" />
+    <Compile Include="Ideas\FindIdeaCollectionOperation.cs" />
+    <Compile Include="Ideas\FindIdeaOperation.cs" />
+    <Compile Include="Ideas\UpdateIdeaOperation.cs" />
+    <Compile Include="IOperation.cs" />
+    <Compile Include="IOperation.Generic.cs" />
+    <Compile Include="News\AddNewsItemOperation.cs" />
+    <Compile Include="News\DeleteNewsItemOperation.cs" />
+    <Compile Include="News\FindNewsCollectionOperation.cs" />
+    <Compile Include="News\FindNewsItemOperation.cs" />
+    <Compile Include="News\UpdateNewsItemOperation.cs" />
+    <Compile Include="Operation.cs" />
+    <Compile Include="BusinessShell.cs" />
+    <Compile Include="Operation.Generic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteNodes\FindMainMenuNodesOperation.cs" />
+    <Compile Include="SiteNodes\FindSiteNodeOperation.cs" />
+    <Compile Include="Vacancies\AddVacancyOperation.cs" />
+    <Compile Include="Vacancies\DeleteVacancyOperation.cs" />
+    <Compile Include="Vacancies\FindVacancyCollectionOperation.cs" />
+    <Compile Include="Vacancies\FindVacancyOperation.cs" />
+    <Compile Include="Vacancies\UpdateVacancyOperation.cs" />
+    <Compile Include="Views\AnnouncementView.cs" />
+    <Compile Include="Views\ArticleView.cs" />
+    <Compile Include="Views\CommentView.cs" />
+    <Compile Include="Views\CompanyView.cs" />
+    <Compile Include="Views\ContentItemView.cs" />
+    <Compile Include="Views\IdeaView.cs" />
+    <Compile Include="Views\Mappers\AnnouncementExtensions.cs" />
+    <Compile Include="Views\Mappers\ArticleExtensions.cs" />
+    <Compile Include="Views\Mappers\CommentExtensions.cs" />
+    <Compile Include="Views\Mappers\CompanyExtensions.cs" />
+    <Compile Include="Views\Mappers\IdeaExtensions.cs" />
+    <Compile Include="Views\Mappers\NewsExtensions.cs" />
+    <Compile Include="Views\Mappers\VacancyExtensions.cs" />
+    <Compile Include="Views\NewsView.cs" />
+    <Compile Include="Views\SiteMapItem.cs" />
+    <Compile Include="Views\SiteMap.cs" />
+    <Compile Include="Views\VacancyView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharpCMS.Model\SharpCMS.Domain.csproj">
+      <Project>{CBFC9255-3DAE-442D-B0F4-9854B630B30A}</Project>
+      <Name>SharpCMS.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpCMS.Repository.EF\SharpCMS.Repository.EF.csproj">
+      <Project>{DD67B855-9A1D-41AC-8CD2-67802CEC9557}</Project>
+      <Name>SharpCMS.Repository.EF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,64 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Photo gallery</title>
+        <script type="text/javascript" src="/Scripts/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="/Scripts/widgets/gallery/jquery.gallery.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                var r = $("#gallery").redman().data("redman");
+                setTimeout(function () { r.destroy(); }, 2000);
+            });
+        </script>
+    </head>
+    <body>
+        @*<h1>Photo gallery</h1>
+        <div id="gallery"></div>*@
+        <ul id="cheeses">
+            <li data-price="17.99">Gruyere</li>
+            <li data-price="16.99">Comte</li>
+            <li data-price="4.99">Provolone</li>
+            <li data-price="8.99">Cheddar</li>
+            <li data-price="18.99">Parmigiano Reggiano</li>
+            <li data-price=".99">Government</li>
+        </ul>
+        <div id="register">
+            One pound of each would cost $<span id="total"></span>
+        </div>
+        <script type="text/javascript">
+            var total = $("#total"), cheeses = $("#cheeses"), register = $("#register"), price = $("<span>"),
+                activation = $("#activation").button({ icons: { primary: "ui-icon-search" } }).toggle(function() {
+                    cheeses.filterable({
+                        className: "cheese",
+                        create: function() { register.addClass("ui-widget-header cheese").show(); },
+                        filtered: function(e, ui) {
+                            var t = 0;
+                            ui.visible.each(function() { t = t + $(this).data("price"); });
+                            total.text(t.toFixed(2));
+                        },
+                        setOption: function(e, ui) {
+                            ui.option == "className" && register.toggleClass([ui.original, ui.current].join(" "));
+                        },
+                        hover: function(e, ui) {
+                            if (e.originalEvent.type == "mouseenter") {
+                                price.text(" - " + ui.hovered.data("price") + " per lb").appendTo(ui.hovered);
+                            } else {
+                                price.detach();
+                            }
+                        }
+                    }).bind("filterabledestroy", function(e, ui) {
+                        register.removeClass("ui-widget-header " + ui.options.className).hide();
+                    }).filterable("filter");
+                    setTimeout(function() { cheeses.filterable("option", "className", "cheesePlease"); }, 3000);
+                },
+                    function() {
+                        cheeses.filterable("destroy");
+                    });
+        </script>
+    </body>
+</html>

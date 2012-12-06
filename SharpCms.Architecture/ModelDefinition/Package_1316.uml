@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="1b9beb97-7768-4c07-be59-eee5d5df7b5c"
+  name="SharpCMS"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="e004eaea-437e-4821-8720-22a564e1130c"
+      handle="viewcode://./CodeSchema_Namespace?Namespace=SharpCMS"
+      tag="ViewCode" />
+  </referencesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0f2abe83-6457-4ef9-bddb-40a4579159c0">
+      <profileInstance
+        Id="831d3c68-88b0-436a-b30f-2f35ea92755b"
+        name="TextTemplateBindings" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="785a839f-14fd-4d47-921b-7d06fbb797ad"
+        LastKnownName="Domain"
+        LastKnownLocation="Package1_1316.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,21 @@
+﻿@model SharpCMS.UI.Mvc.Controllers.PhotoGalleryUploadModel
+           
+@{
+    Layout = null;
+}
+<script  type="text/javascript">
+    onComplete = function() {
+        alert('Completed');
+    };
+
+    onSubmit = function () {
+        alert('Submitting');
+    };
+</script>
+
+<div class="gallery-actions">
+    <div id="add-photo" class="pseudo-link">+ добавить</div>
+</div>
+<script type="text/javascript">
+    $('#add-photo').fileuploader('@Url.Action("Upload")', onSubmit, onComplete);
+</script>

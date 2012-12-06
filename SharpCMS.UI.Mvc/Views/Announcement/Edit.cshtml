@@ -1,0 +1,105 @@
+﻿@using SharpCMS.UI.Mvc.Models.Announcements
+@model AnnouncementEditModel
+           
+ @section HeaderContent{
+	<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/base/ui-lightness/jquery-ui-1.8.16.custom.css")" />
+	<script src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/ckfinder/ckfinder.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/ckeditor/adapters/jquery.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/jquery-ui-1.8.18.min.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/jquery.ui.datepicker-ru.js")" type="text/javascript"></script>
+	<script language="javascript" type="text/javascript">
+	    $(document).ready(function () {
+	        $("#Text").ckeditor();
+	        $("#save-announcement-button").click(function () { $("#edit-announcement-form").submit(); return false; });
+	        $("#StartingDate,#ExpiryDate").datepicker();
+	    })
+	</script>
+}
+
+@section AdminPanel{
+    @if (User.IsInRole("Administrators"))
+    {
+        <div class="editor-menu-underlayer"></div>
+        <div class="editor-menu">
+			<ul>
+				<li class="editor-menu-item">
+					<a id="save-announcement-button" class="editor-menu-item-link" href='#'><span>Сохранить</span></a>
+				</li>
+				<li class="editor-menu-item">
+					<a class="editor-menu-item-link" href="@Model.CurrentUrl"><span>Отмена</span></a>
+				</li>
+			</ul>
+        </div>
+    }
+}
+
+<div class="left-page-content"></div>
+<div class="right-page-content">
+	@using (Html.BeginForm("Edit", "Announcement", FormMethod.Post, new { id = "edit-announcement-form" }))
+ {
+     <div class="item-details">
+         <div class="item-details-property">
+             <span class="item-details-label">@Html.LabelFor(m => m.Title)</span>
+             @Html.TextBoxFor(m => m.Title, new { maxlength = "200", style = "width: 400px;" })
+             @Html.ValidationMessageFor(m => m.Title, null, new { @class = "item-details-error" })
+         </div>
+         <div class="item-details-property">
+             <span class="item-details-label">@Html.LabelFor(m => m.Abstract)</span>
+             @Html.TextAreaFor(m => m.Abstract, new {rows = "5", style = "width: 400px;" })	
+             @Html.ValidationMessageFor(m => m.Abstract, null, new { @class = "item-details-error" })
+         </div>
+         <div class="item-details-property">
+             <span class="item-details-label">@Html.LabelFor(m => m.Text)</span>
+             @Html.TextAreaFor(m => m.Text)
+         </div>
+         <div class="item-details-property">
+             <span class="item-details-label">@Html.LabelFor(m => m.StartingDate)</span>
+             <span class="item-details-property">@Html.EditorFor(m => m.StartingDate)</span>
+         </div>
+         <div class="item-details-property">
+             <span class="item-details-label">@Html.LabelFor(m => m.ExpiryDate)</span>
+             <span class="item-details-property">@Html.EditorFor(m => m.ExpiryDate)</span>
+         </div>
+         <div class="item-details-property">
+             <span class="item-details-label">@Html.LabelFor(m => m.Venue)</span>
+             @Html.TextBoxFor(m => m.Venue, new {maxlength = "200", style = "width: 400px;" })
+             @Html.ValidationMessageFor(m => m.Venue, null, new { @class = "item-details-error" })
+         </div>
+         <div class="item-details-property">
+             <span class="item-details-label">@Html.LabelFor(m => m.StartingTime)</span>
+             @Html.TextBoxFor(m => m.StartingTime, new {maxlength = "200", style = "width: 400px;" })
+             <span class="item-details-sublabel">Например, 09:00</span>
+             @Html.ValidationMessageFor(m => m.StartingTime)
+         </div>
+         <div class="item-details-property">
+             <span class="item-details-label">@Html.LabelFor(m => m.Organizer)</span>
+             @Html.TextBoxFor(m => m.Organizer, new {maxlength = "200", style = "width: 400px;" })
+             @Html.ValidationMessageFor(m => m.Organizer, null, new { @class = "item-details-error" })
+         </div>
+         <div class="item-details-property">
+             <span class="item-details-label">@Html.LabelFor(m => m.Contact)</span>
+             @Html.TextBoxFor(m => m.Contact, new {maxlength = "200", style = "width: 400px;" })
+             @Html.ValidationMessageFor(m => m.Contact, null, new { @class = "item-details-error" })
+         </div>
+         <span class="item-details-property">
+             @Html.CheckBoxFor(m => m.IsActive)
+             @Html.LabelFor(m => m.IsActive)
+         </span>
+         <div class="item-details-property">
+             <span class="item-details-label">@Html.LabelFor(m => m.SortOrder)</span>
+             @Html.TextBoxFor(m => m.SortOrder, new { style = "width: 400px;" })
+             <span class="item-details-sublabel">Целое число в диапазоне от 1 до 1000</span>					
+             @Html.ValidationMessageFor(m => m.SortOrder, null, new { @class = "item-details-error" })
+         </div>
+         <div class="item-details-property">
+             @Html.CheckBoxFor(m => m.DisplayOnMainMenu)
+             @Html.LabelFor(m => m.DisplayOnMainMenu)
+         </div>
+         <div class="item-details-property">
+             @Html.CheckBoxFor(m => m.DisplayOnSideMenu)
+             @Html.LabelFor(m => m.DisplayOnSideMenu)
+         </div>
+     </div>
+ }
+</div>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/Program Files (x86)/Microsoft Visual Studio 10.0/Common7/IDE/Extensions/Microsoft/Visualization and Modeling Feature Pack/2.0/Logging/CodeGenLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log">
+  <Message Timestamp="2012-02-27T13:29:59" Importance="High" Text="Code generation or text transformation started." />
+  <Error Timestamp="2012-02-27T13:29:59" Importance="High" Text="No templates were found to process.  Configure templates by choosing 'Configure Default Code Generation Settings...' from the 'Architecture' menu, or change the selection for which code generation is launched." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="Diagnostic" Text="The selection included 24 elements which were not bound to a template." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="Diagnostic" Text="'SharpCms.Architecture::SharpCMS::Domain' -  (Package): no bound template." />
+  <Warning Timestamp="2012-02-27T13:29:59" Importance="Medium" Text="'SharpCms.Architecture::SharpCMS::Domain::Company' -  (Class): no bound template." />
+  <Warning Timestamp="2012-02-27T13:29:59" Importance="Medium" Text="'SharpCms.Architecture::SharpCMS::Domain::PageItem' -  (Class): no bound template." />
+  <Warning Timestamp="2012-02-27T13:29:59" Importance="Medium" Text="'SharpCms.Architecture::SharpCMS::Domain::ContentItem' -  (Class): no bound template." />
+  <Warning Timestamp="2012-02-27T13:29:59" Importance="Medium" Text="'SharpCms.Architecture::SharpCMS::Domain::Idea' -  (Class): no bound template." />
+  <Warning Timestamp="2012-02-27T13:29:59" Importance="Medium" Text="'SharpCms.Architecture::SharpCMS::Domain::IEntityWithKey&lt;Guid&gt;' -  (Interface): no bound template." />
+  <Warning Timestamp="2012-02-27T13:29:59" Importance="Medium" Text="'SharpCms.Architecture::SharpCMS::Domain::IEntityWithKey' -  (Interface): no bound template." />
+  <Warning Timestamp="2012-02-27T13:29:59" Importance="Medium" Text="'SharpCms.Architecture::SharpCMS::Domain::News' -  (Class): no bound template." />
+  <Warning Timestamp="2012-02-27T13:29:59" Importance="Medium" Text="'SharpCms.Architecture::SharpCMS::Domain::SiteNode' -  (Class): no bound template." />
+  <Warning Timestamp="2012-02-27T13:29:59" Importance="Medium" Text="'SharpCms.Architecture::SharpCMS::Domain::Vacancy' -  (Class): no bound template." />
+  <Warning Timestamp="2012-02-27T13:29:59" Importance="Medium" Text="'SharpCms.Architecture::SharpCMS::Domain::Announcement' -  (Class): no bound template." />
+  <Warning Timestamp="2012-02-27T13:29:59" Importance="Medium" Text="'SharpCms.Architecture::SharpCMS::Domain::Article' -  (Class): no bound template." />
+  <Warning Timestamp="2012-02-27T13:29:59" Importance="Medium" Text="'SharpCms.Architecture::SharpCMS::Domain::Comment' -  (Class): no bound template." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="Diagnostic" Text="'SharpCms.Architecture::SharpCMS::Domain::' -  (Association): no bound template." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="Diagnostic" Text="'SharpCms.Architecture::SharpCMS::Domain::' -  (Association): no bound template." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="Diagnostic" Text="'SharpCms.Architecture::SharpCMS::Domain::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="Diagnostic" Text="'SharpCms.Architecture::SharpCMS::Domain::' -  (Association): no bound template." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="Diagnostic" Text="'SharpCms.Architecture::SharpCMS::Domain::' -  (Association): no bound template." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="Diagnostic" Text="'SharpCms.Architecture::SharpCMS::Domain::' -  (Association): no bound template." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="Diagnostic" Text="'SharpCms.Architecture::SharpCMS::Domain::' -  (Association): no bound template." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="Diagnostic" Text="'SharpCms.Architecture::SharpCMS::Domain::' -  (Association): no bound template." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="Diagnostic" Text="'SharpCms.Architecture::SharpCMS::Domain::' -  (Association): no bound template." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="Diagnostic" Text="'SharpCms.Architecture::SharpCMS::Domain::' -  (Association): no bound template." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="Diagnostic" Text="'SharpCms.Architecture::SharpCMS::Domain::' -  (Association): no bound template." />
+  <Message Timestamp="2012-02-27T13:29:59" Importance="High" Text="Code generation complete. Errors: 1. Warnings: 12." />
+</Log>
