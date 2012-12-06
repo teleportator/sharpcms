@@ -25,7 +25,7 @@ Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "SharpCms.Architecture", "Sh
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{76D3A49F-C945-4AAE-9D4A-FA434D1DE300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Test", "DataAccess.Test\DataAccess.Test.csproj", "{F9E74768-C925-4F95-97C6-A04EA97C622F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpCMS.DataAccess.Tests", "DataAccess.Test\SharpCMS.DataAccess.Tests.csproj", "{F9E74768-C925-4F95-97C6-A04EA97C622F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{52129573-9401-4C2B-942B-96B9B95B45D1}"
 	ProjectSection(SolutionItems) = preProject
