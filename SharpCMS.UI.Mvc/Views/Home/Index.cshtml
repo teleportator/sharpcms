@@ -8,8 +8,8 @@
 }
 @section HeaderContent
 {
-    <script type="text/javascript">
-        $(document).ready(function () {
+    <script>
+        $(function () {
             $('#about-video').click(function () {
                 $.ajax("/home/video/", {
                     dataType: 'html',
@@ -33,37 +33,72 @@
             $('#video-container').html(data);
             showVideo();
         }
-
     </script>
 }
 @section AdminPanel{
     @if (User.IsInRole("Administrators"))
     {
-        <div class="editor-menu-underlayer"></div>
-        <div class="editor-menu">
-            <ul>
-                <li class="editor-menu-delimiter"><span>добавление<br/>разделов</span></li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("create", "article", new {type = "page", id = "e795efb9-dac0-439d-9276-1f44f4b54710"})"><span>Статьи</span></a>
+        <div class="editmenu-underlayer"></div>
+        <div class="editmenu-bar">
+            <ul class="editmenu-group-list">
+                <li class="editor-menu-group">
+                    <ul class="editmenu-list">
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("edit", "article", new {type = "page", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_edit">Изменить</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="editmenu-group-title">Страница</span>
                 </li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("create", "article", new {type = "announcement", id = "e795efb9-dac0-439d-9276-1f44f4b54710"})"><span>Акции</span></a>
-                </li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("create", "article", new {type = "vacancy", id = "e795efb9-dac0-439d-9276-1f44f4b54710"})"><span>Вакансии</span></a>
-                </li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("create", "article", new {type = "idea", id = "e795efb9-dac0-439d-9276-1f44f4b54710"})"><span>Идеи</span></a>
-                </li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("create", "article", new {type = "news", id = "e795efb9-dac0-439d-9276-1f44f4b54710"})"><span>Новости</span></a>
-                </li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("create", "article", new {type = "company", id = "e795efb9-dac0-439d-9276-1f44f4b54710"})"><span>Организации</span></a>
-                </li>
-                <li class="editor-menu-delimiter"><img src="@Url.Content("~/Content/Styles/Images/editor-menu-separator.png")" alt=""/></li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("edit", "article", new {type = "page", id = "e795efb9-dac0-439d-9276-1f44f4b54710"})"><span>Изменить раздел</span></a>
+                <li class="editor-menu-group">
+                    <ul class="editmenu-list">
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "article", new {type = "page", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_article">Статьи</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "article", new {type = "announcement", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_announcement">Акции</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "article", new {type = "vacancy", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_vacancy">Вакансии</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "article", new {type = "idea", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_idea">Идеи</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "article", new {type = "news", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_news">Новости</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "article", new {type = "company", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_company">Организации</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="editmenu-group-title">Добавление раздела</span>
                 </li>
             </ul>
         </div>

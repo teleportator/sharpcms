@@ -145,11 +145,37 @@ h4
     float: right;
 }
 /*******************begin_editor-menu*****************/
-.editor-menu-underlayer
+.editmenu-underlayer
 {
     display: block;
     height: 48px;
 }
+
+.editmenu-bar {
+    background: url('/content/styles/images/admin-panel-large-back.jpg');
+    height: 48px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
+}
+
+.editor-menu-group {
+    background: url('/Content/Styles/Images/editor-menu-delimiter.png') right 0 no-repeat;
+    float: left;
+    margin: 3px 0 0 2px;
+    padding: 0 4px 0 0;
+    vertical-align: top;
+}
+
+.editmenu-group-title {
+    color: #666;
+    display: block;
+    font-size: 11px;
+    text-align: center;
+    margin: 4px 8px 0 8px;
+}
+
 .editor-menu
 {
     font-family: Arial, Sans-Serif;
@@ -174,12 +200,6 @@ h4
     float: left;
     padding: 2px 10px 0 20px;
     color: #565656;
-}
-
-.editor-menu-item
-{
-    float: left;
-    padding: 5px 0 0 10px;
 }
 
 .editor-menu-item-link
@@ -212,7 +232,7 @@ h4
     background: url(/content/styles/images/admin-panel-link-sprite.png) no-repeat left top;
 }
 
-.editor-menu-item-button
+.editmenu-button
 {
     color: #333;
     display: inline-block;
@@ -225,28 +245,88 @@ h4
     
 }
 
-.editor-menu-item-button .editor-menu-item-text, .editor-menu-item-button:hover .editor-menu-item-text {
+.editmenu-button-content {
     height: 24px;
     display: inline-block;
+}
+
+._m_editmenu-button-content_edit {
     padding-left: 18px;
     background: url('/Content/Styles/Images/edit-page-icon.png') no-repeat 0 4px;
 }
 
-.editor-menu-item-button span
+._m_editmenu-button-content_delete {
+    padding-left: 16px;
+    background: url('/Content/Styles/Images/delete-page-icon.png') no-repeat 0 4px;
+}
+
+._m_editmenu-button-content_article {
+    padding-left: 20px;
+    background: url('/Content/Styles/Images/create-article-icon.png') no-repeat 0 3px;
+}
+
+._m_editmenu-button-content_announcement {
+    padding-left: 20px;
+    background: url('/Content/Styles/Images/create-announcement-icon.png') no-repeat 0 3px;
+}
+
+._m_editmenu-button-content_announcement {
+    padding-left: 20px;
+    background: url('/Content/Styles/Images/create-announcement-icon.png') no-repeat 0 3px;
+}
+
+._m_editmenu-button-content_vacancy {
+    padding-left: 20px;
+    background: url('/Content/Styles/Images/create-vacancy-icon.png') no-repeat 0 3px;
+}
+
+._m_editmenu-button-content_idea {
+    padding-left: 20px;
+    background: url('/Content/Styles/Images/create-idea-icon.png') no-repeat 0 3px;
+}
+
+._m_editmenu-button-content_news {
+    padding-left: 20px;
+    background: url('/Content/Styles/Images/create-news-icon.png') no-repeat 0 3px;
+}
+
+._m_editmenu-button-content_company {
+    padding-left: 20px;
+    background: url('/Content/Styles/Images/create-company-icon.png') no-repeat 0 3px;
+}
+
+._m_editmenu-button-content_element {
+    padding-left: 20px;
+    background: url('/Content/Styles/Images/create-content-icon.png') no-repeat 0 5px;
+}
+
+.editmenu-button > span
 {
     display: inline-block;
     height: 24px;
     padding-left: 7px;
 }
 
-.editor-menu-item-button:hover
+.editmenu-button:hover
 {
     background: url(/content/styles/images/admin-panel-button-sprite.png) no-repeat right -24px;
 }
 
-.editor-menu-item-button:hover span
+.editmenu-button:hover > span
 {
     background: url(/content/styles/images/admin-panel-button-sprite.png) no-repeat;
+}
+
+.editmenu-group-list {
+    list-style-type: none;
+}
+
+.editmenu-list {
+    list-style-type: none;
+}
+
+.editmenu-item {
+    display: inline-block;
 }
 
 

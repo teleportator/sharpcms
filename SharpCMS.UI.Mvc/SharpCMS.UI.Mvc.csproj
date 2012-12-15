@@ -60,7 +60,6 @@
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\IdeaController.cs" />
     <Compile Include="Controllers\PageController.cs" />
-    <Compile Include="Controllers\PhotoGalleryController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\VacancyController.cs" />
     <Compile Include="Infrastructure\Abstract\ILogoConfiguration.cs" />
@@ -226,6 +225,8 @@
     <Content Include="Content\images\поздравления ветеранов ВОВ.jpg" />
     <Content Include="Content\Styles\Images\actions-back.png" />
     <Content Include="Content\Styles\Images\admin-panel-back.jpg" />
+    <Content Include="Content\Styles\Images\admin-panel-button-sprite.png" />
+    <Content Include="Content\Styles\Images\admin-panel-large-back.jpg" />
     <Content Include="Content\Styles\Images\admin-panel-link-sprite.png" />
     <Content Include="Content\Styles\Images\arrow-gray.png" />
     <Content Include="Content\Styles\Images\arrow.png" />
@@ -234,6 +235,8 @@
     <Content Include="Content\Styles\Images\button-play-video.png" />
     <Content Include="Content\Styles\Images\close-button-small.png" />
     <Content Include="Content\Styles\Images\comments-icon.png" />
+    <Content Include="Content\Styles\Images\edit-page-icon.png" />
+    <Content Include="Content\Styles\Images\editor-menu-delimiter.png" />
     <Content Include="Content\Styles\Images\editor-menu-separator.png" />
     <Content Include="Content\Styles\Images\file-upload-icon.jpg" />
     <Content Include="Content\Styles\Images\first-layer-item.jpg" />
@@ -1192,7 +1195,6 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Scripts\widgets\gallery\jquery.gallery.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1313,9 +1315,6 @@
     <Content Include="Views\Vacancy\Edit.cshtml" />
     <Content Include="Views\Company\Edit.cshtml" />
     <Content Include="Views\Home\Video.cshtml" />
-    <Content Include="Views\PhotoGallery\List.cshtml" />
-    <Content Include="Views\PhotoGallery\Upload.cshtml" />
-    <Content Include="Views\PhotoGallery\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

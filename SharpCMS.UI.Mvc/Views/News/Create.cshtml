@@ -6,29 +6,47 @@
 	<script src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")" type="text/javascript"></script>
 	<script src="@Url.Content("~/Scripts/ckfinder/ckfinder.js")" type="text/javascript"></script>
 	<script src="@Url.Content("~/Scripts/ckeditor/adapters/jquery.js")" type="text/javascript"></script>
-	<script src="@Url.Content("~/Scripts/jquery-ui-1.8.16.min.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/jquery-ui-1.8.18.min.js")" type="text/javascript"></script>
 	<script src="@Url.Content("~/Scripts/jquery.ui.datepicker-ru.js")" type="text/javascript"></script>
-	<script language="javascript" type="text/javascript">
-	    $(document).ready(function () {
+	<script>
+	    var submitForm = function () {
+	        $("#create-news-form").submit();
+	        return false;
+	    };
+	    
+	    $(function() {
 	        $("#Text").ckeditor();
-	        $("#create-news-button").click(function () { $("#create-news-form").submit(); return false; });
+	        $("#submit-button").click(submitForm);
 	        $("#PublishDate").datepicker();
-	    })
+	    });
 	</script>
 }
 
 @section AdminPanel{
     @if (User.IsInRole("Administrators"))
     {
-        <div class="editor-menu-underlayer"></div>
-        <div class="editor-menu">
-			<ul>
-				<li class="editor-menu-item">
-					<a id="create-news-button" class="editor-menu-item-link" href='#'><span>Сохранить</span></a>
-				</li>
-				<li class="editor-menu-item">
-					<a class="editor-menu-item-link" href="@Model.ParentUrl"><span>Отмена</span></a>
-				</li>
+        <div class="editmenu-underlayer"></div>
+        <div class="editmenu-bar">
+			<ul class="editmenu-group-list">
+                <li class="editor-menu-group">
+                    <ul class="editmenu-list">
+                        <li class="editmenu-item">
+                            <a href="#" id="submit-button" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_edit">Сохранить</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a href="@Model.ParentUrl" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_edit">Отмена</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="editmenu-group-title">Страница</span>
+                </li>
 			</ul>
         </div>
     }

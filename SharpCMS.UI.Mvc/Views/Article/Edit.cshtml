@@ -9,32 +9,45 @@
     <script src="@Url.Content("~/Scripts/jquery-ui-1.8.18.min.js")" type="text/javascript"> </script>
     <script src="@Url.Content("~/Scripts/fileuploader.js")" type="text/javascript"> </script>
     <script src="@Url.Content("~/Scripts/fileuploader-jquery.js")" type="text/javascript"> </script>
-	<script type="text/javascript">
-		saveArticle = function() {
+	<script>
+		var submitForm = function() {
 			$("#edit-article-form").submit();
 			return false;
 		};
 	</script>
-	<script language="javascript" type="text/javascript">
-		$(document).ready(function () {
-			$("#Text").ckeditor();
-			$("#save-article-button").click(saveArticle);
-		})
+	<script>
+	    $(function() {
+	        $("#Text").ckeditor();
+	        $("#sumbit-button").click(submitForm);
+	    });
 	</script>
 }
 
 @section AdminPanel{
     @if (User.IsInRole("Administrators"))
     {
-        <div class="editor-menu-underlayer"></div>
-        <div class="editor-menu">
-			<ul>
-				<li class="editor-menu-item">
-					<a id="save-article-button" class="editor-menu-item-link" href='#'><span>Сохранить</span></a>
-				</li>
-				<li class="editor-menu-item">
-					<a class="editor-menu-item-link" href="@Model.CurrentUrl"><span>Отмена</span></a>
-				</li>
+        <div class="editmenu-underlayer"></div>
+        <div class="editmenu-bar">
+            <ul class="editmenu-group-list">
+                <li class="editor-menu-group">
+                    <ul class="editmenu-list">
+                        <li class="editmenu-item">
+                            <a href="#" id="sumbit-button" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_edit">Сохранить</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a href="@Model.CurrentUrl" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_edit">Отмена</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="editmenu-group-title">Страница</span>
+                </li>
 			</ul>
         </div>
     }

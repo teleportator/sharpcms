@@ -1,17 +1,41 @@
 ﻿@using SharpCMS.UI.Mvc.Models.Ideas
 @model IdeaDisplayModel
 
+@section HeaderContent
+{
+    <script>
+        $(function () {
+            $('#delete-button').click(function () {
+                return confirm('Вы действительно хотите безвозвратно удалить этот элемент?');
+            });
+        });
+    </script>
+}
+
 @section AdminPanel{
     @if (User.IsInRole("Administrators"))
     {
-        <div class="editor-menu-underlayer"></div>
-        <div class="editor-menu">
-            <ul>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("edit", "idea", new { id = Model.Id })"><span>Изменить идею</span></a>
-                </li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("delete", "idea", new { id = Model.Id })" onclick=" if (confirm('Вы действительно хотите безвозвратно удалить этот элемент?') == false) return false; "><span>Удалить идею</span></a>
+        <div class="editmenu-underlayer"></div>
+        <div class="editmenu-bar">
+            <ul class="editmenu-group-list">
+                <li class="editor-menu-group">
+                    <ul class="editmenu-list">
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("edit", "idea", new {id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_edit">Изменить</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("delete", "idea", new {id = Model.Id})" id="delete-button" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_delete">Удалить</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="editmenu-group-title">Страница</span>
                 </li>
             </ul>
         </div>

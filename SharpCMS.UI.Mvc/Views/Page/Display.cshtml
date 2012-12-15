@@ -1,92 +1,96 @@
 ﻿@using SharpCMS.UI.Mvc.Models.Pages
 @model PageDisplayModel
 
+@section HeaderContent
+{
+    <script>
+        $(function () {
+            $('#delete-button').click(function () {
+                return confirm('Вы действительно хотите безвозвратно удалить этот элемент?');
+            });
+        });
+    </script>
+}
+
 @section AdminPanel{
     @if (User.IsInRole("Administrators"))
     {
-        <div class="editor-menu-underlayer"></div>
-        <div style="position:fixed; top:0px; height: 48px; background: url('/content/styles/images/admin-panel-large-back.jpg'); width: 100%; z-index: 10;">
-            <ul>
-                <li style="vertical-align: top; padding: 0 4px 0 0; margin: 3px 2px 0 0; background: url('/Content/Styles/Images/editor-menu-delimiter.png') right 0 no-repeat; float: left;">
-                        <ul>
-                            <li style="float:left">
-                                <a href="#" class="editor-menu-item-button">
-                                    <span>
-                                        <span class="editor-menu-item-text">Изменить</span>
-                                    </span>
-                                </a>
-                            </li>
-                            <li style="float:left">
-                                <a href="#" class="editor-menu-item-button">
-                                    <span>
-                                        <span class="editor-menu-item-text">Удалить</span>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                        <span style="display: block; text-align:center; font-size: 11px; color:#666; padding: 4px 0 0; clear: both;">Страница</span>
-                </li>
-                <li style="vertical-align: top; padding: 0 4px 0 0; margin: 3px 2px 0 0; background: url('/Content/Styles/Images/editor-menu-delimiter.png') right 0 no-repeat; float: left;">
-                    <ul>
-                        <li style="float:left">
-                            <a href="#" class="editor-menu-item-button">
+        <div class="editmenu-underlayer"></div>
+        <div class="editmenu-bar">
+            <ul class="editmenu-group-list">
+                <li class="editor-menu-group">
+                    <ul class="editmenu-list">
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("edit", "article", new {type = "page", id = Model.Id})" class="editmenu-button">
                                 <span>
-                                    <span class="editor-menu-item-text">Новость</span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_edit">Изменить</span>
                                 </span>
                             </a>
                         </li>
-                        <li style="float:left"><a href="#" class="editor-menu-item-button"><span>
-                        	<span class="editor-menu-item-text">
-                        		Изображение
-                        	</span>
-                        </span></a></li>
+                        <li class="editmenu-item">
+                            <a id="delete-button" href="@Url.Action("delete", "article", new {id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_delete">Удалить</span>
+                                </span>
+                            </a>
+                        </li>
                     </ul>
-                    <span  style="display: block; text-align:center; font-size: 11px; color:#666; padding: 4px 0 0; clear: both;">Добавление содержания</span>
+                    <span class="editmenu-group-title">Страница</span>
+                </li>
+                <li class="editor-menu-group">
+                    <ul class="editmenu-list">
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "article", new {type = "page", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_article">Статьи</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "article", new {type = "announcement", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_announcement">Акции</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "article", new {type = "vacancy", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_vacancy">Вакансии</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "article", new {type = "idea", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_idea">Идеи</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "article", new {type = "news", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_news">Новости</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "article", new {type = "company", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_company">Организации</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="editmenu-group-title">Добавление раздела</span>
                 </li>
             </ul>
         </div>
-        @*<div class="editor-menu">
-    	    <ul>
-                <li class="editor-menu-delimiter"><span>добавление<br/>разделов</span></li>
-                <li class="editor-menu-item">					
-                    <a class="editor-menu-item-link" href="@Url.Action("create", "article", new { type = "page", id = Model.Id })"><span>Статьи</span></a>
-                </li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("create", "article", new { type = "announcement", id = Model.Id })"><span>Акции</span></a>
-                </li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("create", "article", new { type = "vacancy", id = Model.Id })"><span>Вакансии</span></a>
-                </li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("create", "article", new { type = "idea", id = Model.Id })"><span>Идеи</span></a>
-                </li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("create", "article", new { type = "news", id = Model.Id })"><span>Новости</span></a>
-                </li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("create", "article", new { type = "company", id = Model.Id })"><span>Организации</span></a>
-                </li>
-                <li class="editor-menu-delimiter"><img src="@Url.Content("~/Content/Styles/Images/editor-menu-separator.png")" alt=""/></li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="@Url.Action("edit", "article", new { type = "page", id = Model.Id })"><span>Изменить раздел</span></a>
-                </li>
-				<li class="editor-menu-item">
-                    <a href="@Url.Action("delete", "article", new {id = Model.Id})" class="editor-menu-item-link" onclick="if (confirm('Вы действительно хотите безвозвратно удалить этот элемент?') == false) return false;"><span>Удалить раздел</span></a>
-                </li>
-                <li class="editor-menu-delimiter"><img src="@Url.Content("~/Content/Styles/Images/editor-menu-separator.png")" alt=""/></li>
-                <li class="editor-menu-item">
-                    <a class="editor-menu-item-link" href="#"><span>Новое изображение</span></a>
-                </li>
-            </ul>
-        </div>*@
-	}
+    }
 }
 <div class="left-page-content">
     @Html.Action("DisplaySideMenu", "Common", new {id = Model.Id})
 </div>
 <div class="right-page-content">
     @Html.Action("Display", "Article", new { id = Model.Id })
-    <div id="photogallery">
-        @Html.Action("List", "PhotoGallery")
-    </div>
 </div>

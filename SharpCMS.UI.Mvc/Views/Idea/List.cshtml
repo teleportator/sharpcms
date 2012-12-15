@@ -2,28 +2,67 @@
 @using SharpCMS.UI.Mvc.Models.Ideas
 @model IdeaListModel
 
+@section HeaderContent
+{
+    <script>
+        $(function () {
+            $('#delete-button').click(function () {
+                return confirm('Вы действительно хотите безвозвратно удалить этот элемент?');
+            });
+        });
+    </script>
+}
+
 @section AdminPanel{
     @if (User.IsInRole("Administrators"))
 	{
-		<div class="editor-menu-underlayer"></div>
-		<div class="editor-menu">
-			<ul>
-				<li class="editor-menu-delimiter"><span>добавление<br/>разделов</span></li>
-				<li class="editor-menu-item">
-					<a class="editor-menu-item-link" href="@Url.Action("create", "article", new { type = "idea", id = Model.Id })"><span>Идеи</span></a>
-				</li>
-				<li class="editor-menu-delimiter"><img src="@Url.Content("~/Content/Styles/Images/editor-menu-separator.png")" alt=""/></li>
-				<li class="editor-menu-item">
-					<a class="editor-menu-item-link" href="@Url.Action("create", "idea", new { id = Model.Id })"><span>Новая идея</span></a>
-				</li>
-				<li class="editor-menu-delimiter"><img src="@Url.Content("~/Content/Styles/Images/editor-menu-separator.png")" alt=""/></li>
-				<li class="editor-menu-item">
-					<a class="editor-menu-item-link" href="@Url.Action("edit", "article", new { type = "idea", id = Model.Id })"><span>Изменить раздел</span></a>
-				</li>
-				<li class="editor-menu-item">
-					<a class="editor-menu-item-link" href="@Url.Action("delete", "article", new { id = Model.Id })" onclick="if (confirm('Вы действительно хотите безвозвратно удалить этот элемент?') == false) return false;"><span>Удалить раздел</span></a>
-				</li>
-			</ul>
+		<div class="editmenu-underlayer"></div>
+		<div class="editmenu-bar">
+            <ul class="editmenu-group-list">
+                <li class="editor-menu-group">
+                    <ul class="editmenu-list">
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("edit", "article", new {type = "idea", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_edit">Изменить</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="editmenu-item">
+                            <a id="delete-button" href="@Url.Action("delete", "article", new {id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_delete">Удалить</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="editmenu-group-title">Страница</span>
+                </li>
+                <li class="editor-menu-group">
+                    <ul class="editmenu-list">
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "article", new {type = "idea", id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_idea">Идеи</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="editmenu-group-title">Добавление разделов</span>
+                </li>
+                <li class="editor-menu-group">
+                    <ul class="editmenu-list">
+                        <li class="editmenu-item">
+                            <a href="@Url.Action("create", "idea", new {id = Model.Id})" class="editmenu-button">
+                                <span>
+                                    <span class="editmenu-button-content _m_editmenu-button-content_element">Идея</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="editmenu-group-title">Добавление содержимого</span>
+                </li>
+            </ul>
 		</div>
 	}
 }
